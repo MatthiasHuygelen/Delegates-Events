@@ -4,31 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Voorbeeld_Delegates_3
+namespace Voorbeeld_Delegates_2
 {
     class Program
     {
         static void Main(string[] args)
         {
             Console.Write("Geef het 1e getal : ");
-            int a = Convert.ToInt32(Console.ReadLine());
+            double a = Convert.ToInt32(Console.ReadLine());
             Console.Write("Geef het 2e getal : ");
-            int b = Convert.ToInt32(Console.ReadLine());
+            double b = Convert.ToInt32(Console.ReadLine());
             CalculateResults(a, b);
             Console.ReadLine();
         }
 
-        delegate int Calculate(int a, int b);
-        public static void CalculateResults(int a , int b)
+        delegate double Calculate(double a, double b);
+        public static void CalculateResults(double a, double b)
         {
-            Calculate methode = delegate (int getal1, int getal2) { return getal1 + getal2; };
-            Console.WriteLine("{0} + {1} = {2}" , a , b , methode(a, b));
+            Calculate methode = Calculation.Add;
+            Console.WriteLine("{0} + {1} = {2}", a, b, methode(a, b));
 
-            methode = delegate (int getal1, int getal2) { return getal1 - getal2; };
+            methode = Calculation.Substract;
             Console.WriteLine("{0} - {1} = {2}", a, b, methode(a, b));
 
-            methode = delegate (int getal1, int getal2) { return getal1 * getal2; };
+            methode = Calculation.Multiply;
             Console.WriteLine("{0} * {1} = {2}", a, b, methode(a, b));
         }
+     
     }
+
+   
 }

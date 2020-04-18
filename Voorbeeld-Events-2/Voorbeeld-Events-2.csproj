@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{29BAC3BC-F907-4BC6-B15D-1AD71F2182C3}</ProjectGuid>
+    <ProjectGuid>{AFD2B653-B2E3-405F-BED3-DDB0E01A7533}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Voorbeeld_Delegates</RootNamespace>
-    <AssemblyName>Voorbeeld-Delegates</AssemblyName>
+    <RootNamespace>Voorbeeld_Events_2</RootNamespace>
+    <AssemblyName>Voorbeeld-Events-2</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculation.cs" />
+    <Compile Include="NietOnderNulEventArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rekening.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

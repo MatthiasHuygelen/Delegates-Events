@@ -12,11 +12,11 @@ namespace Oefening_Events_2
     {
         static void Main(string[] args)
         {
-            Console.Write("Geef de countdown tijd in ( HH:mm:ss ) :");
+            Console.Write("Geef de countdown tijd in ( HH:mm:ss ) : ");
             string timeInput = Console.ReadLine();
             var timeList = timeInput.Split(':').Select(x => Convert.ToInt32(x)).ToArray();
             Timer timer = new Timer(timeList[0], timeList[1], timeList[2]);
-            timer.ItsTime += Timer_ItsTime;
+            timer.CountdownEnded += Timer_ItsTime;
             timer.CurrentTime += Timer_CurrentTime;
             timer.Start();
         }

@@ -9,7 +9,7 @@ namespace Oefening_Events_2
 {
     public class Timer
     {
-        public event EventHandler ItsTime;
+        public event EventHandler CountdownEnded;
         public event EventHandler<string> CurrentTime;
         public TimeSpan TimeSpan { get; set; }
         public Timer(int houres , int minutes , int seconds)
@@ -20,11 +20,11 @@ namespace Oefening_Events_2
         {
             while (TimeSpan.TotalSeconds > 0)
             {
+                Thread.Sleep(1000);
                 TimeSpan = TimeSpan.Add(new TimeSpan(0, 0, -1));
                 CurrentTime.Invoke(this, TimeSpan.ToString());
-                Thread.Sleep(1000);
             }
-            ItsTime.Invoke(this, EventArgs.Empty);
+            CountdownEnded.Invoke(this, EventArgs.Empty);
         }
     }
 }

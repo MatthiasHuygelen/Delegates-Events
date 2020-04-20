@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4CFDCDDE-FA7A-44AD-BA56-9C603A2A6D21}</ProjectGuid>
+    <ProjectGuid>{A9AEECBE-47C9-426A-9FC4-405FB02B96AD}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Oefening_Delegates_1</RootNamespace>
     <AssemblyName>Oefening-Delegates-1</AssemblyName>
@@ -43,10 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculation.cs" />
-    <Compile Include="CalculationEnum.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="StudentData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -8,49 +8,44 @@ namespace Oefening_Delegates_1
 {
     class Program
     {
+
+        public delegate double CalculationMethode(double a, double b);
         static void Main(string[] args)
         {
-            Console.WriteLine("Welke data wenst u te zien?");
-            Console.WriteLine("1. School");
-            Console.WriteLine("2. Niveau");
-            Console.WriteLine("3. School en Niveau");
-            var group = Convert.ToInt32(Console.ReadLine());
-            var grouping = CreateGrouping(group);
-            var studentGroups = StudentData.Students.OrderBy(grouping).GroupBy(grouping);
+            Console.Write("Geef het 1e getal : ");
+            double a = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Geef het 2e getal : ");
+            double b = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("-------------DATA-------------");
-            foreach (var item in studentGroups)
-            {
-                Console.WriteLine("{0} : {1}", (Groupings)group, item.Key);
-                Console.WriteLine("Hoogste : {0}", item.ToList().Max(x => x.Score));
-                Console.WriteLine("Laagste : {0}", item.ToList().Min(x => x.Score));
-                Console.WriteLine("Gemiddelde : {0}", Math.Round(item.ToList().Average(x => x.Score), 2));
-                Console.WriteLine("-------");
-            }
+            Console.WriteLine("---");
+
+            Console.WriteLine("1) Optellen");
+            Console.WriteLine("2) Aftrekken");
+            Console.WriteLine("3) Vermenigvuldigen");
+            Console.WriteLine("4) Delen");
+            Console.Write("Kies een berekening : ");
+            int type = Convert.ToInt32(Console.ReadLine());
+            CalculationMethode methode = GetCalculationMethode(type);
+
+            Console.WriteLine("Oplossing : {0} ", methode.Invoke(a, b));
             Console.ReadLine();
         }
 
-        public static Func<Student, dynamic> CreateGrouping(int group)
+        public static CalculationMethode GetCalculationMethode(int type)
         {
-            switch ((Groupings)group)
+            switch (type)
             {
-                case Groupings.School:
-                    return x => x.School;
-                case Groupings.Niveau:
-                    return x => x.Niveau;
-                case Groupings.Gecombineerd:
-                    return x => (x.School, x.Niveau);
+                case (int)CalculationType.Add:
+                    return Calculation.Add;
+                case (int)CalculationType.Substract:
+                    return Calculation.Substract;
+                case (int)CalculationType.Multiply:
+                    return Calculation.Multiply;
+                case (int)CalculationType.Divide:
+                    return Calculation.Divide;
                 default:
                     throw new NotSupportedException();
             }
         }
     }
-
-    public enum Groupings
-    {
-        School = 1 ,
-        Niveau = 2 ,
-        Gecombineerd = 3
-    }
-
 }

@@ -25,7 +25,7 @@ namespace Oefening_Delegates_1
                 Console.WriteLine("Hoogste : {0}", item.ToList().Max(x => x.Score));
                 Console.WriteLine("Laagste : {0}", item.ToList().Min(x => x.Score));
                 Console.WriteLine("Gemiddelde : {0}", Math.Round(item.ToList().Average(x => x.Score), 2));
-                Console.WriteLine("-------");
+                Console.WriteLine("-------"); 
             }
             Console.ReadLine();
         }

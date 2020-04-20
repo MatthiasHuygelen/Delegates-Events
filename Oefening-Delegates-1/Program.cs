@@ -17,8 +17,8 @@ namespace Oefening_Delegates_1
             Console.Write("Geef het 2e getal : ");
             double b = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("---");
-
+            Console.WriteLine("-----");
+             
             Console.WriteLine("1) Optellen");
             Console.WriteLine("2) Aftrekken");
             Console.WriteLine("3) Vermenigvuldigen");

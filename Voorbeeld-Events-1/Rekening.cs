@@ -20,7 +20,7 @@ namespace Voorbeeld_Events_1
         {
             if (bedrag > Saldo)
             {
-                NietOnderNul.Invoke(this, EventArgs.Empty);
+                NietOnderNul?.Invoke(this, EventArgs.Empty);
             }
             else
             {

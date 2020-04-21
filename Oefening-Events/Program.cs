@@ -11,7 +11,7 @@ namespace Oefening_Events
         static void Main(string[] args)
         {
             Tankwagen wagen = new Tankwagen(200, 5000);
-            wagen.LooptOver += Wagen_LooptOver;
+            wagen.LooptOverEvent += Wagen_LooptOver;
 
             while (wagen.Inhoud != wagen.MaxInhoud)
             {

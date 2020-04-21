@@ -16,8 +16,8 @@ namespace Oefening_Events_2
             string timeInput = Console.ReadLine();
             var timeList = timeInput.Split(':').Select(x => Convert.ToInt32(x)).ToArray();
             Timer timer = new Timer(timeList[0], timeList[1], timeList[2]);
-            timer.CountdownEnded += Timer_ItsTime;
-            timer.CurrentTime += Timer_CurrentTime;
+            timer.CountdownEndedEvent += Timer_ItsTime;
+            timer.CurrentTimeEvent += Timer_CurrentTime;
             timer.Start();
         }
 

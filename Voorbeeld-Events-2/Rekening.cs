@@ -20,7 +20,7 @@ namespace Voorbeeld_Events_2
         {
             if (bedrag > Saldo)
             {
-                NietOnderNul.Invoke(this, new NietOnderNulEventArgs($"Saldo ontoereikend , u hebt {bedrag - Saldo} te kort."));
+                NietOnderNul?.Invoke(this, new NietOnderNulEventArgs($"Saldo ontoereikend , u hebt {bedrag - Saldo} te kort."));
             }
             else
             {

@@ -102,6 +102,14 @@ namespace Oefening_Delegates_1
                 Naam = "Marc",
                 Score = 4
             }
+            ,
+            new Student
+            {
+                School = "Sint-lutgardis",
+                Niveau = "4",
+                Naam = "Marc",
+                Score = 4
+            }
         };
     }
 }

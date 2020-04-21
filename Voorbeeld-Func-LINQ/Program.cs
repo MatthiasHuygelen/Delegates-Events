@@ -17,13 +17,10 @@ namespace Voorbeeld_Func_LINQ
             select = VakSelect(vak);
 
             Console.WriteLine("{0}", (Vak)vak);
-
             var max = studentenLijst.Max(select);
             Console.WriteLine("Hoogste score : {0}" , max);
-
             var min = studentenLijst.Min(select);
             Console.WriteLine("Laagste score : {0}" , min);
-
             var average = studentenLijst.Average(select);
             Console.WriteLine("Gemiddelde score : {0}" , average);
 

@@ -8,7 +8,7 @@ namespace Oefening_Events
 {
     public class Tankwagen
     {
-        public event EventHandler<LooptOverEventArgs> LooptOver;
+        public event EventHandler<LooptOverEventArgs> LooptOverEvent;
         public int Inhoud { get; set; }
         public int MaxInhoud { get; set; }
         public Tankwagen(int inhoud , int maxInhoud)
@@ -21,7 +21,7 @@ namespace Oefening_Events
         { 
             if (MaxInhoud < (Inhoud + teTankenHoeveelheid))
             {
-                LooptOver.Invoke(this, new LooptOverEventArgs("TankWagen zit vol", MaxInhoud - Inhoud));
+                LooptOverEvent.Invoke(this, new LooptOverEventArgs("TankWagen zit vol", MaxInhoud - Inhoud));
                 Inhoud = MaxInhoud;
             }
             else

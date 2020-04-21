@@ -15,7 +15,7 @@ namespace Oefening_Delegates_1
             Console.WriteLine("2. Niveau");
             Console.WriteLine("3. School en Niveau");
             var group = Convert.ToInt32(Console.ReadLine());
-            var grouping = CreateGrouping(group);
+            Func<Student, object> grouping = CreateGrouping(group);
             var studentGroups = StudentData.Students.OrderBy(grouping).GroupBy(grouping);
 
             Console.WriteLine("-------------DATA-------------");
@@ -30,7 +30,7 @@ namespace Oefening_Delegates_1
             Console.ReadLine();
         }
 
-        public static Func<Student, dynamic> CreateGrouping(int group)
+        public static Func<Student, object> CreateGrouping(int group)
         {
             switch ((Groupings)group)
             {

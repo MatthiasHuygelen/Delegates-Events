@@ -27,7 +27,7 @@ namespace Oefening_Delegates_1_CORE
             Console.ReadLine();
         }
 
-        public static Func<Student, dynamic> CreateGrouping(int group) =>
+        public static Func<Student, object> CreateGrouping(int group) =>
             (Groupings)group switch
             {
                 Groupings.School => x => x.School,

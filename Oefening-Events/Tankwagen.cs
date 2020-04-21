@@ -21,7 +21,7 @@ namespace Oefening_Events
         { 
             if (MaxInhoud < (Inhoud + teTankenHoeveelheid))
             {
-                LooptOverEvent.Invoke(this, new LooptOverEventArgs("TankWagen zit vol", MaxInhoud - Inhoud));
+                LooptOverEvent?.Invoke(this, new LooptOverEventArgs("TankWagen zit vol", MaxInhoud - Inhoud));
                 Inhoud = MaxInhoud;
             }
             else
